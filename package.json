@@ -1,0 +1,14 @@
+{
+  "name": "lavioladepapa",
+  "version": "1.0.0",
+  "description": "Violin store online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yosnier Samon Macias",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
