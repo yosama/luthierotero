@@ -1,22 +1,22 @@
-var gulp = require('gulp'),
-sass = require('gulp-sass'),
-notify = require("gulp-notify"),
-gulpImport = require("gulp-html-import"),
-browserify = require("browserify"),
-tap = require("gulp-tap"),
-buffer = require("gulp-buffer"),
-sourcemaps = require('gulp-sourcemaps'),
-htmlmin = require('gulp-htmlmin'),
-uglify = require('gulp-uglify'),
-postcss = require('gulp-postcss'),
-autoprefixer = require('autoprefixer'),
-cssnano = require('cssnano'),
-responsive = require('gulp-responsive'),
-browserSync = require('browser-sync').create();
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var notify = require("gulp-notify");
+var gulpImport = require("gulp-html-import");
+var browserify = require("browserify");
+var tap = require("gulp-tap");
+var buffer = require("gulp-buffer");
+var sourcemaps = require('gulp-sourcemaps');
+var htmlmin = require('gulp-htmlmin');
+var uglify = require('gulp-uglify');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var cssnano = require('cssnano');
+var responsive = require('gulp-responsive');
+var browserSync = require('browser-sync').create();
 
 // Default task
 gulp.task("default",["html","sass"], function(){
-browserSync.init({proxy:"http://127.0.0.1:3100/"}); //Starting browsersync on the  src folder
+browserSync.init({server:"dist/"}); //Starting browsersync on the  src folder
 gulp.watch(["src/public/scss/*.scss", "src/public/scss/**/*.scss"], ["sass"]); // execute the sass task
 gulp.watch("src/*.html").on("change", browserSync.reload); //reload the html files
 gulp.watch("src/*.html", function(){
@@ -29,9 +29,8 @@ gulp.watch(["src/*.html","src/**/*.html"],["html"]);
 
 //Copy and import HTML
 gulp.task("html", function(){
-    gulp.src("src/views/*.html")
-        .pipe(gulpImport("src/views/components"))
-        .pipe(htmlmin({collapseWhitespace:true})) // replace the htmls @import
+    gulp.src("src/*.html")
+        .pipe(gulpImport("src/views/includes/")) // replace the htmls @import
         .pipe(gulp.dest("dist/"))
         .pipe(browserSync.stream())
         .pipe(notify("HTML imported"))
@@ -84,6 +83,3 @@ gulp.task("img", function(){
         .pipe(imagemin())
         .pipe(gulp.dest("dist/img/"))
 });
-
-
-
