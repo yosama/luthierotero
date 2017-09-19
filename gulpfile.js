@@ -16,7 +16,7 @@ var browserSync = require('browser-sync').create();
 
 // Default task
 gulp.task("default",["html","sass"], function(){
-browserSync.init({server:"dist/"}); //Starting browsersync on the  src folder
+browserSync.init({server:"dist/", "browser": "google chrome"}); //Starting browsersync on the  src folder
 gulp.watch(["src/public/scss/*.scss", "src/public/scss/**/*.scss"], ["sass"]); // execute the sass task
 gulp.watch("src/*.html").on("change", browserSync.reload); //reload the html files
 gulp.watch("src/*.html", function(){
