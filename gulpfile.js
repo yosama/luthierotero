@@ -15,7 +15,7 @@ var responsive = require('gulp-responsive');
 var browserSync = require('browser-sync').create();
 
 // Default task
-gulp.task("default",["html","sass"], function(){
+gulp.task("default",["html","sass", "fonts", "js"], function(){
 browserSync.init({server:"dist/", "browser": "google chrome"}); //Starting browsersync on the  src folder
 gulp.watch(["src/public/scss/*.scss", "src/public/scss/**/*.scss"], ["sass"]); // execute the sass task
 gulp.watch("src/*.html").on("change", browserSync.reload); //reload the html files
@@ -24,6 +24,7 @@ gulp.watch("src/*.html", function(){
     notify().write("Browser reloaded");
 } )
 gulp.watch(["src/*.html","src/**/*.html"],["html"]);
+gulp.watch(["src/public/js/*.js", "src/public/js/**/*.js"], ["js"]);
 
 });
 
@@ -52,7 +53,7 @@ gulp.src("src/public/scss/style.scss") //Loaded the style.scss file
 
 //Compile JS
 gulp.task("js", function() {
-    gulp.src("src/public/js/main.js")
+    gulp.src(["src/public/js/main.js","node_modules/bootstrap/dist/js/bootstrap.min.js"])
         .pipe(tap(function(file){
             file.contents = browserify(file.path, {debug:true})
                 .transform("babelify", {presets:["es2015"]})
@@ -82,4 +83,11 @@ gulp.task("img", function(){
         }))
         .pipe(imagemin())
         .pipe(gulp.dest("dist/img/"))
+});
+
+gulp.task("fonts", function(){
+    gulp.src("src/public/fonts/*")
+        .pipe(gulp.dest("dist/fonts/"))
+        .pipe(browserSync.stream())
+        .pipe(notify("Fonts compiled"))
 });
