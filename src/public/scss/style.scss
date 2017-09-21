@@ -1,8 +1,9 @@
-@import "reset";
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300|Roboto+Condensed');
-
-
 @import "variables";
 @import "bootstrap";
 @import "html-tags";
+
+//components
 @import "nav";
+@import "categories";
