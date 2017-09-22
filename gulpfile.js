@@ -31,7 +31,7 @@ gulp.watch(["src/public/js/*.js", "src/public/js/**/*.js"], ["js"]);
 
 //Copy and import HTML
 gulp.task("html", function(){
-    gulp.src("src/*.html")
+    gulp.src(["src/*.html", "src/views/*.html"])
         .pipe(gulpImport("src/views/includes/")) // replace the htmls @import
         .pipe(gulp.dest("dist/"))
         .pipe(browserSync.stream())

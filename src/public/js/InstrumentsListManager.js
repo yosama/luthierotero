@@ -50,12 +50,12 @@ export default class InstrumentsListManager extends UIManager {
         return  `<div class="instrument">
                     <div class="row">
                         <div class="col-md-5">
-                            <a href="/instruments/${instrument.id}">
+                            <a href="instrument-detail.html">
                                 <img class="img-responsive" src="${img_url}" alt="${instrument.category} - ${instrument.model}"${srcset}>
                             </a>
                         </div>
                         <div class="col-md-7">
-                            <h3><a href="/instruments/${instrument.id}">${instrument.description}</a></h3>
+                            <h3><a href="instrument-detail.html">${instrument.description}</a></h3>
                             by <span class="instrument-author"> ${instrument.author}<span>
                             <h4> Model:<span> ${instrument.model}</span></h4> 
                             <h4>Year: ${instrument.year}</h4>
