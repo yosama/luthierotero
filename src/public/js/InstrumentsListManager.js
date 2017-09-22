@@ -13,22 +13,14 @@ export default class InstrumentsListManager extends UIManager {
 
     loadInstruments() {
         this.instrumentsService.list(instruments => {
-           
-            // Comprobamos si hay canciones
             if (instruments.length == 0) {
-                // Mostramos el estado vacío
                 this.setEmpty();
             } else {
-                // Componemos el HTML con todas las canciones
                 this.renderInstruments(instruments);
-
-                // Quitamos el mensaje de cargando y mostramos la lista de canciones
                 this.setIdeal();
             }
         }, error => {
-            // Mostrar el estado de error
             this.setError();
-            // Hacemos log del error en la consola
             console.error("Error loading instruments", error);
         });
     }
@@ -38,7 +30,6 @@ export default class InstrumentsListManager extends UIManager {
         for (let instrument of instruments) {
             html += this.renderInstrument(instrument);
         }
-        // Metemos el HTML en el div que contiene las canciones
         this.setIdealHtml(html);
     }
 
@@ -91,5 +82,4 @@ export default class InstrumentsListManager extends UIManager {
             this.setError();
         })
     }
-
 }
