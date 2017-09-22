@@ -1,12 +1,9 @@
 window.$ = window.jQuery = require("jquery");
 
 import InstrumentsService from "./InstrumentsService";
+import InstrumentsListManager from "./InstrumentsListManager";
 
 const instrumentsService = new InstrumentsService("/instruments/");
 
-
-instrumentsService.list(instruments => {
-    console.log(instruments);
-}, error => {
-    console.log(error);
-});
+const instrumentsListManager = new InstrumentsListManager(".instruments-list", instrumentsService);
+instrumentsListManager.init();
