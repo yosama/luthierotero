@@ -1,0 +1,115 @@
+{
+  "instruments":[
+    { 
+    "id":1,
+    "model":"GA-ALH",
+    "description":"Guitarra Alhambra de iniciacion",
+    "author": "Alhambra S.A. (Muro de Alcoy, Alicante).",
+    "year": "1971",
+    "state": "Presenta dos fisuras tanto en la tapa como en los aros, que han sido selladas por un luthier profesional.",
+    "price": 40,
+    "category":"guitarra",
+    "img_url":"/img/ga-alh-01_T1"
+  },
+    {
+      "id":2,
+    "model":"BA-J-Caselles.",
+    "description":"Bandurria de iniciaci�n.",
+    "author": "Jos� Caselles (Gata de Gorgos, Alicante).",
+    "year": "",
+    "state": "Buen estado.",
+    "price": 190,
+    "category":"bandurria",
+    "img_url":"/img/j-caselles-01_T1"
+  },
+    {
+      "id":3,
+    "model":"VA Gliga Gems II.",
+    "description":"Viola de 42 cm (16,5) con cuerdas Thomastik Dominant, mentonera, estuche, arco de fibra y almohadilla.",
+    "author": "Gliga (Ruman�a).",
+    "year": "2014",
+    "state": "Usada durante dos a�os, muy bien cuidada, aspecto casi nuevo. Buen sonido.",
+    "price": 470,
+    "category":"viola",
+    "img_url":"/img/gliga-gems-II_T1"
+  },
+    {
+      "id":4,
+    "model":"VA-001.",
+    "description":"La Viola de Papa. Viola de 42 cm (16,5). Tapa de abeto. Fondo y aros de arce flameado. Fondo de una pieza. Barniz al aceite de color ambar. Cuerdas: Do, Sol, Re: Thomastik Dominant. La: Larsen.",
+    "author": "Pablo Otero.",
+    "year": "2015",
+    "state": "Buen estado.",
+    "price": "Sold",
+    "category":"viola",
+    "img_url":"/img/va-001_T1"
+  },
+    {
+      "id":5,
+    "model":"VN-002.",
+    "description":"Violin de La Viola de Pap�. Tapa de abeto. Fondo y aros de arce flameado. Barniz al aceite de color naranja. Cuerdas Thomastik Dominant.",
+    "author": "Pablo Otero.",
+    "year": "2015",
+    "state": "Buen estado.",
+    "price": "Sold",
+    "category":"violin",
+    "img_url":"/img/vn-002_T1"
+  },
+    {
+      "id":6,
+    "model":"VN-003.",
+    "description":"Violin de La Viola de Papa. Tapa de cedro rojo. Fondo y aros de arce canadiense con dibujo de agua. Barniz al aceite de color �mbar casi transparente. Cuerdas Thomastik Dominant.",
+    "author": "Pablo Otero.",
+    "year": "2015",
+    "state": "Buen estado.",
+    "price": "Sold",
+    "category":"violin",
+    "img_url":"/img/vn-003_T1"
+  },
+    {
+      "id":7,
+    "model":"VN-004.",
+    "description":"Violin de La Viola de Papa.",
+    "author": "Pablo Otero.",
+    "year": "2016",
+    "state": "Buen estado.",
+    "price": 2000,
+    "category":"violin",
+    "img_url":"/img/vn-004_1"
+  },
+    {
+      "id":8,
+    "model":"VN-006.",
+    "description":"Violin de La Viola de Papa. Tapa de abeto. Fondo y arcos de arce flameado. Barniz sint�tico de color marr�n. Cuerdas Thomastik Dominant.",
+    "author": "Pablo Otero.",
+    "year": "2016",
+    "state": "Nuevo.",
+    "price": 3000,
+    "category":"violin",
+    "img_url":"/img/vn-006_T1"
+  },
+    {
+      "id":9,
+    "model":"VN-007.",
+    "description":"Violin de La Viola de Papa modelo del Ges�. Tapa de abeto. Fondo y arcos de arce flameado. Barniz casero al aceite de color brown-ambar. Cuerdas Thomastik Dominant.",
+    "author": "Pablo Otero.",
+    "year": "2017",
+    "state": "Nuevo.",
+    "price": 3500,
+    "category":"violin",
+    "img_url":"/img/vn-007_2"
+  },
+    {
+      "id":10,
+    "model":"VA-008.",
+    "description":"Viola modelo Conte Vitale agrandado. Tapa de abeto. Fondo de arce de una sola pieza y arcos de arce. Barniz casero de color brown-ambar. Cuerdas Thomastik Dominant.",
+    "author": "Pablo Otero.",
+    "year": "2017",
+    "state": "Nuevo.",
+    "price": 3500,
+    "category":"viola",
+    "img_url":"/img/va-008_3"
+    }  
+  ]
+}
+  
