@@ -1,0 +1,8 @@
+.glyphicon {
+    &.glyphicon-star {
+        color:$color-star;
+    }
+    &.glyphicon-star-empty {
+        color: $color-chance;
+    }
+} 
