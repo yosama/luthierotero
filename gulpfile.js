@@ -41,12 +41,12 @@ gulp.task("html", function(){
 // Compile SASS
 gulp.task("sass", function(){
 gulp.src("src/public/scss/style.scss") //Loaded the style.scss file
-    .pipe(sourcemaps.init())
+    // .pipe(sourcemaps.init())
     .pipe(sass().on("error", function(error){
         return notify().write(error) // Show notification if there is an error
     })) //compile
     .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(sourcemaps.write("./"))
+    // .pipe(sourcemaps.write("./"))
     .pipe(gulp.dest("dist/")) //save
     .pipe(browserSync.stream())// reload the css on browser
     .pipe(notify("SASS compiled")); //Show notifactions on screen
@@ -64,9 +64,9 @@ gulp.task("js", function() {
                 })
         }))
         .pipe(buffer())
-        .pipe(sourcemaps.init({loadMaps:true}))
+        // .pipe(sourcemaps.init({loadMaps:true}))
         .pipe(uglify())
-        .pipe(sourcemaps.write("./"))
+        // .pipe(sourcemaps.write("./"))
         .pipe(gulp.dest("dist/"))
         .pipe(browserSync.stream())
         .pipe(notify("JS Compiled"))
