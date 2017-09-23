@@ -6,6 +6,10 @@
   "scripts": {
     "server": "json-server --static ./dist --port 3100 db/instruments.json"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yosama/lavioladepapa.git"
+  },
   "author": "Yosnier Samon Macias",
   "license": "ISC",
   "devDependencies": {
