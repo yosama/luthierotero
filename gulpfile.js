@@ -74,7 +74,7 @@ gulp.task("js", function() {
 
 // Resize and rename image task
 gulp.task("img", function(){
-    gulp.src("src/public/img/*")
+    gulp.src("src/public/img/instruments/*")
         .pipe(responsive({
             "*.png":[
                 {width: 150, rename:{suffix:"-150px"}},
@@ -83,7 +83,7 @@ gulp.task("img", function(){
             ]
         }))
         .pipe(imagemin())
-        .pipe(gulp.dest("dist/img/"))
+        .pipe(gulp.dest("dist/img/instruments"))
 });
 
 gulp.task("fonts", function(){

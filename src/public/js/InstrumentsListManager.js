@@ -37,7 +37,7 @@ export default class InstrumentsListManager extends UIManager {
         let img_url = instrument.img_url; 
         let srcset = "";
         if (img_url == "") {
-            img_url = "img/instrument-150px.png";
+            img_url = "img/instruments/instrument-150px.png";
             srcset =' srcset="'+img_url+'-150px.png 150w,'+img_url+'-250px.png 250w,'+img_url+'-300px.png 300w"';
         } else {
             srcset =' srcset="'+img_url+'-150px.png 150w,'+img_url+'-250px.png 250w,'+img_url+'-300px.png 300w"'
