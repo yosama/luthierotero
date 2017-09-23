@@ -61,7 +61,3 @@ typings/
 .env
 
 package-lock.json
-
-data/
-
-img/
