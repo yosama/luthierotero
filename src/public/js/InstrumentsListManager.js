@@ -1,4 +1,5 @@
 import UIManager from './UIManager';
+var moment = require('moment');
 
 export default class InstrumentsListManager extends UIManager {
 
@@ -68,10 +69,11 @@ export default class InstrumentsListManager extends UIManager {
                                 <span class="glyphicon glyphicon-star-empty"></span>
                                 <span class="glyphicon glyphicon-star-empty"></span>
                             </p>
+                            <span> Published: ${this.getTimeAgo(instrument.publication_date)}</span>
                         </div>
                     </div>
                 </div>
-                <hr>`;
+                <hr>`
     }
 
     deleteInstrument(instrumentId) {
@@ -81,5 +83,29 @@ export default class InstrumentsListManager extends UIManager {
         }, error => {
             this.setError();
         })
+    }
+
+    getTimeAgo(date) {
+        var momentDate = moment(date);
+        var timeAgo = "";
+        var diffDate = Math.abs(momentDate.diff(new Date(),"ms"))
+        var timeInMilisecond = {
+            second: 1000,
+            minute: 60 * 1000,
+            hour: 60 * 60 * 1000,
+            day:  24 * 60 * 60 * 1000,
+            week: 24 * 60 * 60 * 1000 * 7
+        }
+
+        if (diffDate < timeInMilisecond.minute){
+            timeAgo = momentDate.diff(new Date(),"second")
+        } else if ((diffDate > timeInMilisecond.minute && diffDate < timeInMilisecond.hour) || (diffDate > timeInMilisecond.hour && diffDate < timeInMilisecond.day)){
+            timeAgo = momentDate.fromNow()
+        } else if (diffDate > timeInMilisecond.day && diffDate < timeInMilisecond.week){
+            timeAgo = "last "+  momentDate.format("dddd")
+        } else {
+            timeAgo = momentDate.format("DD/MM/YYYY hh:mm:ss")
+        }
+        return timeAgo; 
     }
 }

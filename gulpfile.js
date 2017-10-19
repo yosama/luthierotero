@@ -16,7 +16,7 @@ var imagemin = require("gulp-imagemin");
 var browserSync = require('browser-sync').create();
 
 // Default task
-gulp.task("default",["img","html","sass", "fonts", "js"], function(){
+gulp.task("default",["html","sass", "fonts", "js"], function(){
 browserSync.init({proxy:"http://127.0.0.1:3100/", "browser": "google chrome"}); //Starting browsersync on the  src folder
 gulp.watch(["src/public/scss/*.scss", "src/public/scss/**/*.scss"], ["sass"]); // execute the sass task
 gulp.watch("src/*.html").on("change", browserSync.reload); //reload the html files

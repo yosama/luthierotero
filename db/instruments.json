@@ -9,7 +9,8 @@
     "state": "Presenta dos fisuras tanto en la tapa como en los aros, que han sido selladas por un luthier profesional.",
     "price": 40,
     "category":"guitarra",
-    "img_url":"/img/instruments/ga-alh-01_T1"
+    "img_url":"/img/instruments/ga-alh-01_T1",
+    "publication_date":1508429825124
   },
     {
       "id":2,
@@ -20,7 +21,8 @@
     "state": "Buen estado.",
     "price": 190,
     "category":"bandurria",
-    "img_url":"/img/instruments/j-caselles-01_T1"
+    "img_url":"/img/instruments/j-caselles-01_T1",
+    "publication_date":1508427001872
   },
     {
       "id":3,
@@ -31,7 +33,8 @@
     "state": "Usada durante dos a�os, muy bien cuidada, aspecto casi nuevo. Buen sonido.",
     "price": 470,
     "category":"viola",
-    "img_url":"/img/instruments/gliga-gems-II_T1"
+    "img_url":"/img/instruments/gliga-gems-II_T1",
+    "publication_date":1508245051986
   },
     {
       "id":4,
@@ -42,7 +45,8 @@
     "state": "Buen estado.",
     "price": "Sold",
     "category":"viola",
-    "img_url":"/img/instruments/va-001_T1"
+    "img_url":"/img/instruments/va-001_T1",
+    "publication_date":1507979503463
   },
     {
       "id":5,
@@ -53,7 +57,8 @@
     "state": "Buen estado.",
     "price": "Sold",
     "category":"violin",
-    "img_url":"/img/instruments/vn-002_T1"
+    "img_url":"/img/instruments/vn-002_T1",
+    "publication_date":1503880740733
   },
     {
       "id":6,
@@ -64,7 +69,8 @@
     "state": "Buen estado.",
     "price": "Sold",
     "category":"violin",
-    "img_url":"/img/instruments/vn-003_T1"
+    "img_url":"/img/instruments/vn-003_T1",
+    "publication_date":1507979503463
   },
     {
       "id":7,
@@ -75,7 +81,8 @@
     "state": "Buen estado.",
     "price": 2000,
     "category":"violin",
-    "img_url":"/img/instruments/vn-004_1"
+    "img_url":"/img/instruments/vn-004_1",
+    "publication_date":1507892877799
   },
     {
       "id":8,
@@ -86,7 +93,8 @@
     "state": "Nuevo.",
     "price": 3000,
     "category":"violin",
-    "img_url":"/img/instruments/vn-006_T1"
+    "img_url":"/img/instruments/vn-006_T1",
+    "publication_date":1507649992375
   },
     {
       "id":9,
@@ -97,7 +105,8 @@
     "state": "Nuevo.",
     "price": 3500,
     "category":"violin",
-    "img_url":"/img/instruments/vn-007_2"
+    "img_url":"/img/instruments/vn-007_2",
+    "publication_date":1508243287146
   },
     {
       "id":10,
@@ -109,6 +118,7 @@
     "price": 3500,
     "category":"viola",
     "img_url":"/img/instruments/va-008_3"
+    ,"publication_date":1508178444482
     }  
   ]
 }
