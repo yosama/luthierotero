@@ -56,8 +56,9 @@ export default class InstrumentsListManager extends UIManager {
                             </a>
                         </div>
                         <div class="col-md-7">
-                            <h3><a href="instrument-detail.html">${instrument.description}</a></h3>
+                            <h3><a href="instrument-detail.html">${instrument.name}</a></h3>
                             by <span class="instrument-author"> ${instrument.author}<span>
+                            <p>${instrument.description}</p>
                             <h4> Model:<span> ${instrument.model}</span></h4> 
                             <h4>Year: ${instrument.year}</h4>
                             <h4>State:</<h4> <span>${instrument.state}</span>
