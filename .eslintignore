@@ -1,0 +1,4 @@
+node_modules/*
+**/*.md
+docs
+bin/set_god_owners.js

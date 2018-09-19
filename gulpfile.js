@@ -1,94 +1,181 @@
+// importamos gulp
+
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var notify = require("gulp-notify");
-var gulpImport = require("gulp-html-import");
-var browserify = require("browserify");
-var tap = require("gulp-tap");
-var buffer = require("gulp-buffer");
-var sourcemaps = require('gulp-sourcemaps');
-var htmlmin = require('gulp-htmlmin');
-var uglify = require('gulp-uglify');
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var cssnano = require('cssnano');
-var responsive = require('gulp-responsive');
-var imagemin = require("gulp-imagemin");
+var notify = require('gulp-notify');
 var browserSync = require('browser-sync').create();
+var browserify = require('browserify');
+var tap = require('gulp-tap');
+var buffer = require('gulp-buffer');
+var uglify = require('gulp-uglify');
+var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('gulp-autoprefixer');
+var cssnano = require('gulp-cssnano');
+var responsive = require('gulp-responsive');
+var imagemin = require('gulp-imagemin');
+var fontAwesome = require('node-font-awesome');
+var gulpImport = require("gulp-html-import");
+var htmlmin = require("gulp-htmlmin");
 
-// Default task
-gulp.task("default",[/*"img",*/"html","sass", "fonts", "js"], function(){
-browserSync.init({proxy:"http://127.0.0.1:3100/", "browser": "google chrome"}); //Starting browsersync on the  src folder
-gulp.watch(["src/public/scss/*.scss", "src/public/scss/**/*.scss"], ["sass"]); // execute the sass task
-gulp.watch("src/*.html").on("change", browserSync.reload); //reload the html files
-gulp.watch("src/*.html", function(){
-    browserSync.reload;
-    notify().write("Browser reloaded");
-} )
-gulp.watch(["src/*.html","src/**/*.html"],["html"]);
-gulp.watch(["src/public/js/*.js", "src/public/js/**/*.js"], ["js"]);
+// source and distribution folder
+var source = 'src/',
+    dest = 'public/';
 
+// html config
+var html = {
+    in: source + '*.html',
+    out: 'views/',
+    watch:[ source + '*.html', source + '**/*.html']
+}
+
+// javascript config
+var js = { 
+    in : source + "js/main.js",
+    out: dest + "js/",
+    watch: [source + "js/*.js", source + "js/**/*.js"],
+    sourcemaps: './'
+};
+
+// bootstrap scss source and fonts
+var bootstrapSass = { in : './node_modules/bootstrap-sass/' },
+    fonts = {
+        in : [
+            fontAwesome.fonts,
+            bootstrapSass.in + 'assets/fonts/**/*'
+        ],
+        out: dest + 'fonts/'
+    };
+
+// sass config
+var scss = { 
+    in : source + 'scss/style.scss',
+    out: dest + 'css/',
+    watch: source + 'scss/**/*',
+    sourcemaps: './',
+    sassOpts: {
+        outputStyle: 'nested',
+        precison: 3,
+        errLogToConsole: true,
+        includePaths: [bootstrapSass.in + 'assets/stylesheets', fontAwesome.scssPath],
+    }
+};
+
+// responsive config
+var rwd = {
+    in : [source + 'img/*', source + 'img/**/*'],
+    out: dest + 'img/',
+    watch: [source + 'img/*', source + 'img/**/*'],
+    options: {
+        "contents/*": [
+            { width: 375, rename: { suffix: '-xs' }, withoutEnlargement:false, skipOnEnlargement: true },
+            { width: 768, rename: { suffix: '-sm' }, withoutEnlargement:false, skipOnEnlargement: true },
+            { width: 1024, rename: { suffix: '-md' }, withoutEnlargement:false, skipOnEnlargement: true },
+            { width: 1200, rename: { suffix: '-lg' }, withoutEnlargement:false, skipOnEnlargement: true },
+            { width: 1536, rename: { suffix: '-@2x' }, withoutEnlargement:false, skipOnEnlargement: true },
+            { width: 2048, rename: { suffix: '-@3x' }, withoutEnlargement:false, skipOnEnlargement: true }
+        ]
+        /* ,"avatars/*": [
+        //     { width: 35, height:35, withoutEnlargement:false, skipOnEnlargement: true },
+        //     { width: 70, height:70, rename: { suffix: '@2x' }, withoutEnlargement:false, skipOnEnlargement: true },
+        //     { width: 105, height:105, rename: { suffix: '@3x' }, withoutEnlargement:false, skipOnEnlargement: true },
+        // ]*/
+    }
+}
+
+
+// images optimization
+var img = {
+    in : rwd.out + '*',
+    out: rwd.out
+};
+
+// copy bootstrap required fonts to dest
+gulp.task('fonts', function() {
+    gulp
+        .src(fonts.in)
+        .pipe(gulp.dest(fonts.out))
+        .pipe(notify({
+            title: "Fonts",
+            message: "Fonts moved 🤘"
+        }));
 });
 
-//Copy and import HTML
-gulp.task("html", function(){
-    gulp.src(["src/*.html", "src/views/*.html"])
-        .pipe(gulpImport("src/views/includes/")) // replace the htmls @import
-        .pipe(gulp.dest("dist/"))
-        .pipe(browserSync.stream())
-        .pipe(notify("HTML imported"))
+// compile scss
+gulp.task('sass', function() {
+    return gulp.src(scss.in)
+        //.pipe(sourcemaps.init())
+        .pipe(sass(scss.sassOpts).on('error', sass.logError))
+        .pipe(autoprefixer())
+        // .pipe(cssnano())
+        // .pipe(sourcemaps.write(scss.sourcemaps))
+        .pipe(gulp.dest(scss.out))
+        .pipe(notify({
+            title: "SASS",
+            message: "Compiled 🤘"
+        }))
+        .pipe(browserSync.stream());
 });
 
-// Compile SASS
-gulp.task("sass", function(){
-gulp.src("src/public/scss/style.scss") //Loaded the style.scss file
-    // .pipe(sourcemaps.init())
-    .pipe(sass().on("error", function(error){
-        return notify().write(error) // Show notification if there is an error
-    })) //compile
-    .pipe(postcss([autoprefixer(), cssnano()]))
-    // .pipe(sourcemaps.write("./"))
-    .pipe(gulp.dest("dist/")) //save
-    .pipe(browserSync.stream())// reload the css on browser
-    .pipe(notify("SASS compiled")); //Show notifactions on screen
-});
-
-//Compile JS
+// javascript
 gulp.task("js", function() {
-    gulp.src(["src/public/js/main.js","node_modules/bootstrap/dist/js/bootstrap.min.js"])
-        .pipe(tap(function(file){
-            file.contents = browserify(file.path, {debug:true})
-                .transform("babelify", {presets:["es2015"]})
-                .bundle()
-                .on("error", function(error) {
-                    return notify().write(error);
-                })
+    gulp.src(js.in)
+        .pipe(sourcemaps.init())
+        .pipe(tap(function(file) {
+            file.contents = browserify(file.path)
+            .transform("babelify", {presets: ["es2015"]})
+            .bundle()
+            .on('error', function(error){
+                return notify().write(error);
+            })
         }))
         .pipe(buffer())
-        // .pipe(sourcemaps.init({loadMaps:true}))
         .pipe(uglify())
-        // .pipe(sourcemaps.write("./"))
-        .pipe(gulp.dest("dist/"))
-        .pipe(browserSync.stream())
-        .pipe(notify("JS Compiled"))
-})
-
-// Resize and rename image task
-gulp.task("img", function(){
-    gulp.src("src/public/img/instruments/*")
-        .pipe(responsive({
-            "*.png":[
-                {width: 150, rename:{suffix:"-150px"}},
-                {width: 250, rename:{suffix:"-250px"}},
-                {width: 300, rename:{suffix:"-300px"}}
-            ]
+        .pipe(sourcemaps.write(js.sourcemaps))
+        .pipe(gulp.dest(js.out))
+        .pipe(notify({
+            title: "JS",
+            message: "Concatenated 🤘"
         }))
-        .pipe(imagemin())
-        .pipe(gulp.dest("dist/img/instruments"))
+        .pipe(browserSync.stream());
 });
 
-gulp.task("fonts", function(){
-    gulp.src("src/public/fonts/*")
-        .pipe(gulp.dest("dist/fonts/"))
+// responsive
+gulp.task('responsive', function() {
+    gulp.src(rwd.in)
+        .pipe(responsive(rwd.options))
+        .pipe(imagemin())
+        .pipe(gulp.dest(rwd.out));
+});
+
+// image optimization
+gulp.task('imagemin', function() {
+    gulp.src(img.in)
+        .pipe(imagemin())
+        .pipe(gulp.dest(img.out));
+});
+
+// copy and import html
+gulp.task("html", function(){
+    gulp.src(html.in)
+        .pipe(gulpImport(source + "components/")) // reemplaza los @import de los HTML
+        .pipe(htmlmin({collapseWhitespace: true})) // minifica el HTML
+        .pipe(gulp.dest(html.out))
         .pipe(browserSync.stream())
-        .pipe(notify("Fonts compiled"))
+        .pipe(notify("HTML importado"));
+});
+
+// default task
+gulp.task("default", ["js", "sass", "fonts", "html"/*, "responsive", "imagemin"*/], function() {
+
+    // iniciar BrowserSync
+    browserSync.init({
+        // server: "./", // levanta servidor web en carpeta actual
+        proxy: "127.0.0.1:3000", // actúa como proxy enviando las peticiones a sparrest
+        browser: "google chrome"
+    });
+
+    gulp.watch(scss.watch, ["sass"]);
+    gulp.watch(html.watch).on("change", browserSync.reload);
+    gulp.watch(rwd.watch, ["responsive", "imagemin"]);
+    gulp.watch(js.watch, ["js"]);
 });
