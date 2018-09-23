@@ -62,16 +62,19 @@ mongoose.connection.on('error', (err) => {
 /**
 * Express configuration.
 */
+
+// view engine setup
+const env = nunjucks.configure(path.join(__dirname, 'views'), {autoescape: true, express: app, watch:true});
+const nunjucksDate = require('nunjucks-date');
+nunjucksDate.setDefaultFormat('Do MMMM  YYYY, h:mm:ss a');
+env.addFilter("date", nunjucksDate);
+
 app.set('port', 3000)
 app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'views'));
 app.use('/public',express.static(path.join(__dirname, 'public')));
 
-// view engine setup
-const env = nunjucks.configure(path.join(__dirname, 'views'), {autoescape: true, express: app});
-const nunjucksDate = require('nunjucks-date');
-nunjucksDate.setDefaultFormat('Do MMMM  YYYY, h:mm:ss a');
-env.addFilter("date", nunjucksDate);
+
 
 app.use(expressStatusMonitor());
 app.use(compression());

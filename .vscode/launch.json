@@ -11,7 +11,7 @@
       "cwd": "${workspaceFolder}",
       "program": "${workspaceFolder}/app.js",
       "env": {
-        "DB_URL":"localhost:27017/lavioladepapa",
+        "DB_URL":"mongodb://localhost:27017/lavioladepapa",
         "PORT":"3000",
         "NODE_ENV":"development",
         "Debug":"*"

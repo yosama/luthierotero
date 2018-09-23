@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock scripts %}
+
+
+
+
+
+<div class="col-md-12">
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Instrument</a></li>
+        <li class="active">Detail</li>
+    </ol>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 style="margin-top: 0px;">La Viola de Papa
+            <small>by Pablo Otero.</small>
+        </h1>
+        <hr>
+    </div>
+   
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+        <ul>
+            <li>
+                <img class="item img-responsive" src="/img/instruments/va-001_T1-150px.png" alt="">
+            </li>
+            <li>
+                <img class="item img-responsive" src="/img/instruments/va-001_A1-150px.png" alt="">
+            </li>
+            <li>
+                <img class="item img-responsive" src="/img/instruments/va-001_F1-150px.png" alt="">
+            </li>
+            <li>
+                <img class="item img-responsive" src="/img/instruments/va-001_T2-150px.png" alt="">
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <img class="img-responsive" src="/img/instruments/va-001_T1-250px.png" alt="">
+    </div>
+    <div class="col-md-5">
+        <h3>Product Description</h3>
+        <div class="description">
+                <h4>Name: <span>Viola de La Viola de Papá</span></h4>
+            <h4> Model:<span> VA-001</span></h4> 
+            <h4>Year: 2015</h4>
+            <h4>State:<span> Good</span></h4>
+            <h4> Description:</h4>
+            <p>Viola de 42 cm (16,5). Tapa de abeto. Fondo y aros de arce flameado. Fondo de una pieza. Barniz al aceite de color ambar. Cuerdas: Do, Sol, Re: Thomastik Dominant. La: Larsen.</p>
+            <span>Ratings: </span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star-empty"></span>
+            <span class="glyphicon glyphicon-star-empty"></span>
+            <h3>Price: 1000.00€</h3>
+        </div>
+        <form action="/user/{{userId}}/cart/items/{{item._id}}" role="form" method="post">
+            <button class="btn btn-primary" type="submit">
+                Add to cart
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </button>
+        </form> 
+    </div>  
+</div>
