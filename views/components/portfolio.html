@@ -3,7 +3,6 @@
     <div class="row no-gutters popup-gallery">
       {% for item in products %}
         <div class="col-lg-4 col-sm-6">
-
           <a class="portfolio-box" href="{{ item.pictures | last }}-@3x.jpg">
             <img class="img-fluid" src="img/contents/{{item.pictures | first }}.jpg" alt="{{ item.name }}"
              srcset="{{item.pictures | first }}-650px.jpg 375w, {{ item.pictures | first }}-650px.jpg 768w, {{item.pictures | first }}-650px.jpg 1024w\"

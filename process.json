@@ -1,0 +1,25 @@
+{
+  "apps" : [{
+    "name"        : "Lavioladepapa",
+    "script"      : "app.js",
+    "args"        : [],
+    "log_date_format" : "DD-MM-YYYY HH:mm Z",
+    "watch"       : false,
+    "node_args"   : "",
+    "merge_logs"  : false,
+    "cwd"         : "./",
+    "exec_mode"  : "cluster",
+    "instances": "1",
+    "env": {
+        "NODE_ENV": "Production",
+        "SENDGRID_USER":"yosamac",
+        "SENDGRID_PASSWORD":"openitsesamo357",
+        "DB_URL":"mongodb://database:27017/lavioladepapa",
+        "COOKIE":"CDHNP-KEDUHN-QRFXPAQCVB-CXDHKMZQMMZ",
+        "SESSION_SECRET":"SEGZDMDPJ-JPDY-MAZT-HTJC-KVWRQTKVNBP",
+        "PAGE_SIZE":20,
+        "JWT_SECRET":"LAVIOLADEPAPA-SUPERSECURE-JWTASDAASD",
+        "BASE_URL":"http://upforfilm.com/api/v1/"
+    }
+  }]
+}

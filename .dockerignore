@@ -1,0 +1,17 @@
+node_modules
+npm-debug.log
+db/
+.vscode
+.env
+.npm
+.git
+.gitignore
+.editorconfig
+node_modules
+.DS_Store
+npm-debug.log
+*.crt
+*.key
+*.pem
+.npmrc
+ src/
