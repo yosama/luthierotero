@@ -19,7 +19,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const expressValidator = require('express-validator');
 const expressStatusMonitor = require('express-status-monitor');
-const sass = require('node-sass-middleware');
+// const sass = require('node-sass-middleware');
 const nunjucks = require('nunjucks');
 
 const multer = require('multer');
@@ -76,10 +76,10 @@ app.use('/public',express.static(path.join(__dirname, 'public')));
 
 app.use(expressStatusMonitor());
 app.use(compression());
-app.use(sass({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public')
-}));
+// app.use(sass({
+//   src: path.join(__dirname, 'public'),
+//   dest: path.join(__dirname, 'public')
+// }));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
