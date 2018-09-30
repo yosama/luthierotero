@@ -21,6 +21,7 @@ const expressValidator = require('express-validator');
 const expressStatusMonitor = require('express-status-monitor');
 const sass = require('node-sass-middleware');
 const nunjucks = require('nunjucks');
+const favicon = require('serve-favicon');
 
 const multer = require('multer');
 
@@ -64,7 +65,7 @@ mongoose.connection.on('error', (err) => {
 */
 
 // view engine setup
-const env = nunjucks.configure(path.join(__dirname, 'views'), {autoescape: true, express: app});
+const env = nunjucks.configure(path.join(__dirname, 'views'), {autoescape: true, express: app, watch:true});
 const nunjucksDate = require('nunjucks-date');
 nunjucksDate.setDefaultFormat('Do MMMM  YYYY, h:mm:ss a');
 env.addFilter("date", nunjucksDate);
@@ -72,7 +73,9 @@ env.addFilter("date", nunjucksDate);
 app.set('port', 3000)
 app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'views'));
-app.use('/public',express.static(path.join(__dirname, 'public')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon', 'favicon.ico')));
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+
 
 app.use(expressStatusMonitor());
 app.use(compression());
