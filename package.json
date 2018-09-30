@@ -37,6 +37,7 @@
     "nunjucks-date": "^1.2.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "request": "^2.88.0",
     "serve-favicon": "^2.5.0",
     "superagent": "^4.0.0-beta.5",
     "underscore": "^1.9.1"
