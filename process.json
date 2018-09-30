@@ -19,7 +19,8 @@
         "SESSION_SECRET":"SEGZDMDPJ-JPDY-MAZT-HTJC-KVWRQTKVNBP",
         "PAGE_SIZE":20,
         "JWT_SECRET":"LAVIOLADEPAPA-SUPERSECURE-JWTASDAASD",
-        "BASE_URL":"http://upforfilm.com/api/v1/"
+        "BASE_URL":"http://lavioladepapa.com/api/v1/",
+        "PORT":3000
     }
   }]
 }

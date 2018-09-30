@@ -3,24 +3,44 @@ version: '3'
 # Define the services/containers to be run
 services:
   nginx:
-    build: ./nginx
+    image: appserver:latest 
     links:
         - node1:node1
-        # - node2:node2
-        # - node3:node3
+        - node2:node2
+        - node3:node3
     ports:
         - "80:80"
 
   node1: #name of your service
     image: lavioladepapa:latest # specify the directory of the Dockerfile
+    restart: on-failure:5
     ports:
       - "3000" #specify ports forwarding
     links:
       - database # link this service to the database service
-    # volumes:
-    #   - .:/usr/src/app
     depends_on:
       - database
+  
+  node2: #name of your service
+    image: lavioladepapa:latest # specify the directory of the Dockerfile
+    restart: on-failure:5
+    ports:
+      - "3000" #specify ports forwarding
+    links:
+      - database # link this service to the database service
+    depends_on:
+      - database
+
+  node3: #name of your service
+    image: lavioladepapa:latest # specify the directory of the Dockerfile
+    restart: on-failure:5
+    ports:
+      - "3000" #specify ports forwarding
+    links:
+      - database # link this service to the database service
+    depends_on:
+      - database        
+      
   
   database: # name of the service
     image: mongo # specify image to build container from
@@ -28,28 +48,3 @@ services:
       - ./database:/data/db
     ports:
       - "37017:27017"
-
-
-  # node2: #name of your service
-  #   image: lavioladepapa:latest # specify the directory of the Dockerfile
-  #   ports:
-  #     - "3000" #specify ports forwarding
-  #   links:
-  #     - database # link this service to the database service
-  #   volumes:
-  #     - .:/usr/src/app
-  #   depends_on:
-  #     - database
-
-  # node3: #name of your service
-  #   image: lavioladepapa:latest # specify the directory of the Dockerfile
-  #   ports:
-  #     - "3000" #specify ports forwarding
-  #   links:
-  #     - database # link this service to the database service
-  #   volumes:
-  #     - .:/usr/src/app
-  #   depends_on:
-  #     - database        
-      
-  

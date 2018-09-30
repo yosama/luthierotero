@@ -19,7 +19,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const expressValidator = require('express-validator');
 const expressStatusMonitor = require('express-status-monitor');
-const sass = require('node-sass-middleware');
+// const sass = require('node-sass-middleware');
 const nunjucks = require('nunjucks');
 const favicon = require('serve-favicon');
 
@@ -73,16 +73,12 @@ env.addFilter("date", nunjucksDate);
 app.set('port', 3000)
 app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'views'));
-app.use(favicon(path.join(__dirname, 'public', 'favicon', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
 
 app.use(expressStatusMonitor());
 app.use(compression());
-app.use(sass({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public')
-}));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
