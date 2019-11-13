@@ -1,10 +1,14 @@
 {
   "name": "lavioladepapa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Violin store online",
   "main": "index.js",
   "scripts": {
-    "start-dev": "nodemon app.js"
+    "start-dev": "nodemon app.js",
+    "cm": "git-cz",
+    "commitmsg": "validate-commit-msg",
+    "release": "standard-version",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -22,6 +26,8 @@
     "crypto": "^1.0.1",
     "dotenv": "^6.0.0",
     "errorhandler": "^1.5.0",
+    "eslint-config-hapi": "^12.0.0",
+    "eslint-plugin-hapi": "^4.1.0",
     "express": "^4.16.3",
     "express-flash": "0.0.2",
     "express-session": "^1.15.6",
@@ -41,5 +47,31 @@
     "serve-favicon": "^2.5.0",
     "superagent": "^4.0.0-beta.5",
     "underscore": "^1.9.1"
+  },
+  "devDependencies": {
+    "commitizen": "^3.1.2",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.16.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.2.1",
+    "standard-version": "^5.0.2",
+    "validate-commit": "^3.4.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.js": [
+        "git add -f"
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test"
+    }
   }
 }
