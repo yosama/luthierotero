@@ -1,3 +1,31 @@
 {
-    "extends": "google"
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "env": {
+        "node": true
+    },
+    "extends": "hapi",
+    "rules": {
+        "comma-spacing": [1, { "before": false, "after": true }],
+        "comma-style": [1, "first"],
+        "no-unused-vars":"error",
+        "space-before-blocks":"error",
+        "arrow-spacing": ["error", { "before": true, "after": true }],
+        "no-shadow":"error",
+        "object-curly-spacing":["error","always"],
+        "space-before-function-paren": ["error", "always"],
+        "quotes":["error", "single"],
+        "array-bracket-spacing": ["error", "always"],
+        "hapi/hapi-scope-start":"off",
+        "arrow-parens":"off",
+        "hapi/no-arrowception": "off",
+        "no-confusing-arrow":"off",
+        "indent":["error", 4, {"ArrayExpression": 0, "ObjectExpression": 1, "ignoredNodes": ["CallExpression[callee.type='CallExpression']"] }],
+        "no-spaced-func":"off",
+        "brace-style":["error","allman", { "allowSingleLine": true }],
+        "func-call-spacing": ["error", "always", { "allowNewlines": true }],
+        "require-await": "off",
+        "no-unreachable":"error"
+    }
 }
