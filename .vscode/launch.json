@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Development",
       "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/app.js",
+      "program": "${workspaceFolder}/src/app.js",
       "env": {
         "DB_URL":"mongodb://localhost:27017/lavioladepapa",
         "PORT":"3000",
