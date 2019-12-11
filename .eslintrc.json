@@ -1,31 +1,24 @@
 {
-    "parserOptions": {
-        "ecmaVersion": 2018
-    },
+    "extends": "airbnb-base",
     "env": {
-        "node": true
+      "node": true,
+      "mocha": true,
+      "es6": true
     },
-    "extends": "hapi",
+    "plugins": ["chai-friendly"],
     "rules": {
-        "comma-spacing": [1, { "before": false, "after": true }],
-        "comma-style": [1, "first"],
-        "no-unused-vars":"error",
-        "space-before-blocks":"error",
-        "arrow-spacing": ["error", { "before": true, "after": true }],
-        "no-shadow":"error",
-        "object-curly-spacing":["error","always"],
-        "space-before-function-paren": ["error", "always"],
-        "quotes":["error", "single"],
-        "array-bracket-spacing": ["error", "always"],
-        "hapi/hapi-scope-start":"off",
-        "arrow-parens":"off",
-        "hapi/no-arrowception": "off",
-        "no-confusing-arrow":"off",
-        "indent":["error", 4, {"ArrayExpression": 0, "ObjectExpression": 1, "ignoredNodes": ["CallExpression[callee.type='CallExpression']"] }],
-        "no-spaced-func":"off",
-        "brace-style":["error","allman", { "allowSingleLine": true }],
-        "func-call-spacing": ["error", "always", { "allowNewlines": true }],
-        "require-await": "off",
-        "no-unreachable":"error"
+      "comma-dangle": 0,
+      "consistent-return": 0,
+      "function-paren-newline": ["error", "never"],
+      "implicit-arrow-linebreak": ["off"],
+      "no-param-reassign": 0,
+      "no-underscore-dangle": 0,
+      "no-shadow": 0,
+      "no-console": 0,
+      "no-plusplus": 0,
+      "no-unused-expressions": 0,
+      "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
+      "chai-friendly/no-unused-expressions": 2
     }
-}
+  }
+  
