@@ -21,13 +21,13 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const expressValidator = require('express-validator');
 const expressStatusMonitor = require('express-status-monitor');
-// const sass = require('node-sass-middleware');
 const nunjucks = require('nunjucks');
 const favicon = require('serve-favicon');
 
-const multer = require('multer');
+const nunjucksDate = require('nunjucks-date');
 
-const upload = multer({ dest: path.join(__dirname, 'uploads') });
+const { DB_URL } = require('./config/env.js');
+
 
 /**
 * Load environment variables from .env file, where API keys and passwords are configured.
@@ -37,9 +37,8 @@ dotenv.load({ path: '.env' });
 /**
 * Controllers (route handlers).
 */
-const nunjucksDate = require('nunjucks-date');
-const homeController = require('./controllers/home');
-const userController = require('./controllers/user');
+const homeController = require('./controller/home');
+const userController = require('./controller/user');
 
 /**
 * API keys and Passport configuration.
@@ -54,7 +53,7 @@ const app = express();
 /**
 * Connect to MongoDB.
 */
-mongoose.connect(process.env.DB_URL);
+mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.on('error', (err) => {
   console.error(err);
   console.log('%s MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
@@ -66,8 +65,8 @@ mongoose.connection.on('error', (err) => {
 */
 
 // view engine setup
-const env = nunjucks.configure(path.join(__dirname, 'views'), { autoescape: true, express: app, watch: true });
 
+const env = nunjucks.configure(path.join(__dirname, 'views'), { autoescape: true, express: app, watch: true });
 
 nunjucksDate.setDefaultFormat('Do MMMM  YYYY, h:mm:ss a');
 env.addFilter('date', nunjucksDate);
@@ -77,7 +76,6 @@ app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'views'));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
-
 
 app.use(expressStatusMonitor());
 app.use(compression());
