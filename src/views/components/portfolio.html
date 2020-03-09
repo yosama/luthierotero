@@ -1,12 +1,10 @@
 <section class="p-0" id="portfolio">
   <div class="container-fluid">
-    <div class="row no-gutters popup-gallery">
+    <div class="row no-gutters popup-gallery"> 
       {% for item in products %}
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="{{ item.pictures | last }}-@3x.jpg">
-            <img class="img-fluid" src="img/contents/{{item.pictures | first }}.jpg" alt="{{ item.model }}"
-             srcset="{{item.pictures | first }}-650px.jpg 375w, {{item.pictures | first }}-650px.jpg 1024w\"
-            >
+          <a class="portfolio-box" href="{{ item.pictures | first }}-xs.jpeg">
+            <img class="img-fluid" src="{{ item.pictures | last }}-ns.jpeg" alt="{{ item.model }}" />
             <div class="portfolio-box-caption">
               <div class="portfolio-box-caption-content">
                 <div class="project-name">
