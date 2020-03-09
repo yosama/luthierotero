@@ -1,18 +1,17 @@
-"use strict";
 
-let superagent = require("superagent");
-let _ = require("underscore");
+const superagent = require('superagent');
+const _ = require('underscore');
 
-module.exports = function(Config) {
+module.exports = function (Config) {
   const url = process.env.OPENEXCHANGES_URL + Config.openExchangeRatesKey;
-  let rates = {
+  const rates = {
     USD: 1,
     EUR: 1.1,
     GBP: 1.5
   };
 
-  const ping = function(callback) {
-    superagent.get(url, function(error, res) {
+  const ping = function (callback) {
+    superagent.get(url, (error, res) => {
       // If error happens, ignore it because we'll try again in an hour
       if (error) {
         if (callback) {
@@ -24,7 +23,7 @@ module.exports = function(Config) {
       let results;
       try {
         results = JSON.parse(res.text);
-        _.each(results.rates || {}, function(value, key) {
+        _.each(results.rates || {}, (value, key) => {
           rates[key] = value;
         });
         if (callback) {
@@ -41,9 +40,7 @@ module.exports = function(Config) {
   setInterval(ping, 60 * 60 * 1000); // Repeat every hour
 
   // Return the current state of the exchange rates
-  const ret = () => {
-    return rates;
-  };
+  const ret = () => rates;
 
   ret.ping = ping;
   return ret;

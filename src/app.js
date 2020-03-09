@@ -1,5 +1,3 @@
-/* eslint-disable hapi/hapi-capitalize-modules */
-
 
 /**
 * Module dependencies.
