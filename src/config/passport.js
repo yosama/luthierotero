@@ -1,9 +1,8 @@
-"use strict";
 
-const passport = require("passport");
-const { Strategy: LocalStrategy } = require("passport-local");
+const passport = require('passport');
+const { Strategy: LocalStrategy } = require('passport-local');
 
-const User = require("../models").User;
+const { User } = require('../model');
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
@@ -18,7 +17,7 @@ passport.deserializeUser((id, done) => {
 /**
  * Sign in using Email and Password.
  */
-passport.use(new LocalStrategy({ usernameField: "email" }, (email, password, done) => {
+passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
   User.findOne({ email: email.toLowerCase() }, (err, user) => {
     if (err) { return done(err); }
     if (!user) {
@@ -29,7 +28,7 @@ passport.use(new LocalStrategy({ usernameField: "email" }, (email, password, don
       if (isMatch) {
         return done(null, user);
       }
-      return done(null, false, { msg: "Invalid email or password." });
+      return done(null, false, { msg: 'Invalid email or password.' });
     });
   });
 }));
@@ -56,15 +55,15 @@ exports.isAuthenticated = (req, res, next) => {
   if (req.isAuthenticated()) {
     return next();
   }
-  res.redirect("/login");
+  res.redirect('/login');
 };
 
 /**
  * Authorization Required middleware.
  */
 exports.isAuthorized = (req, res, next) => {
-  const provider = req.path.split("/").slice(-1)[0];
-  const token = req.user.tokens.find(token => token.kind === provider);
+  const provider = req.path.split('/').slice(-1)[0];
+  const token = req.user.tokens.find((token) => token.kind === provider);
   if (token) {
     next();
   } else {
