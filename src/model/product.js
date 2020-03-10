@@ -13,6 +13,6 @@ const ProductSchema = mongoose.Schema({
   category: { type: String }
 }, { timestamps: true });
 
-const Product = mongoose.model('Instrument', ProductSchema);
+const Product = mongoose.model('products', ProductSchema);
 
 module.exports = Product;
