@@ -1,0 +1,316 @@
+[{
+	"_id": {
+		"$oid": "5ba7d3eef12aad0c439d3706"
+	},
+	"productId": 1,
+	"name": "La Viola de Papá",
+	"model": "VA-001",
+	"description": "Viola de 42 cm (16,5). Tapa de abeto. Fondo y arcos de arce flameado. Fondo de una pieza. Barniz al aceite de color ambar. Cuerdas: Do, Sol, Re: Thomastik Dominant. La: Larsen.",
+	"author": "Pablo Otero",
+	"year": "2015",
+	"state": "Buen estado",
+	"price": "Sold",
+	"category": "viola",
+	"pictures": [
+		"img/contents/VA001_P1120425",
+		"img/contents/VA001_P1120426",
+		"img/contents/VA001_P1120427",
+		"img/contents/VA001_P1120428",
+		"img/contents/VA001_P1120429"
+	]
+},
+{
+	"_id": {
+		"$oid": "5ba7d3eef12aad0c439d3707"
+	},
+	"productId": 4,
+	"name": "Manchao",
+	"model": "VN-004",
+	"description": "Violín de La Viola de Papá.",
+	"author": "Pablo Otero",
+	"year": "2016",
+	"state": "Buen estado",
+	"price": 2000,
+	"category": "violin",
+	"pictures": [
+		"/img/contents/VN004_P1120431",
+		"/img/contents/VN004_P1120433",
+		"/img/contents/VN004_P1120434",
+		"/img/contents/VN004_P1120436",
+		"/img/contents/VN004_P1120438",
+		"/img/contents/VN004_P1120439",
+		"/img/contents/VN004_P1120437"
+	]
+},
+{
+	"_id": {
+		"$oid": "5ba7d3eef12aad0c439d3708"
+	},
+	"productId": 6,
+	"name": "Seis",
+	"model": "VN-006",
+	"description": "Violin de La Viola de Papa. Tapa de abeto. Fondo y arcos de arce flameado. Barniz sintético de color marrón. Cuerdas Thomastik Dominant.",
+	"author": "Pablo Otero",
+	"year": "2016",
+	"state": "Nuevo",
+	"price": 3000,
+	"category": "violin",
+	"pictures": [
+		"/img/contents/VN006_P1120440",
+		"/img/contents/VN006_P1120443",
+		"/img/contents/VN006_P1120445",
+		"/img/contents/VN006_P1120446",
+		"/img/contents/VN006_P1120442"
+	]
+},
+{
+	"_id": {
+		"$oid": "5ba7d3eef12aad0c439d3709"
+	},
+	"productId": 9,
+	"name": "Bob Payn",
+	"model": "VN-007",
+	"description": "Violin de La Viola de Papa modelo del Gesù. Tapa de abeto. Fondo y arcos de arce flameado. Barniz casero al aceite de color brown-ambar. Cuerdas Thomastik Dominant.",
+	"author": "Pablo Otero",
+	"year": "2017",
+	"state": "Nuevo",
+	"price": 3500,
+	"category": "violin",
+	"pictures": [
+		"/img/contents/VN007_P1120449",
+		"/img/contents/VN007_P1120451",
+		"/img/contents/VN007_P1120456",
+		"/img/contents/VN007_P1120453",
+		"/img/contents/VN007_P1120452"
+	]
+},
+{
+	"_id": {
+		"$oid": "5ba7d3eef12aad0c439d370a"
+	},
+	"productId": 10,
+	"name": "Helen",
+	"model": "VA-008",
+	"description": "Viola modelo Conte Vitale agrandado. Tapa de abeto. Fondo de arce de una sola pieza y arcos de arce. Barniz casero de color brown-ambar. Cuerdas Thomastik Dominant.",
+	"author": "Pablo Otero",
+	"year": "2017",
+	"state": "Nuevo",
+	"price": 3500,
+	"category": "viola",
+	"pictures": [
+		"/img/contents/VA008_0",
+		"/img/contents/VA008_2",
+		"/img/contents/VA008_3",
+		"/img/contents/VA008_1",
+		"/img/contents/VA008_0"
+	],
+	"deleted": true
+},
+{
+	"_id": {
+		"$oid": "5ba7d3eef12aad0c439d370b"
+	},
+	"productId": 11,
+	"name": "Nueve",
+	"model": "VN-009",
+	"description": "",
+	"author": "Pablo Otero",
+	"year": "2017",
+	"state": "Nuevo",
+	"price": 6000,
+	"category": "violin",
+	"pictures": [
+		"/img/contents/VN009_P1120465",
+		"/img/contents/VN009_P1120466",
+		"/img/contents/VN009_P1120467",
+		"/img/contents/VN009_P1120471",
+		"/img/contents/VN009_P1120468"
+	]
+},
+{
+	"_id": {
+		"$oid": "5ba7d3eef12aad0c439d370c"
+	},
+	"productId": 12,
+	"name": "Diez",
+	"model": "VA-010",
+	"description": "",
+	"author": "Pablo Otero",
+	"year": "2018",
+	"state": "Nuevo",
+	"price": 7000,
+	"category": "viola",
+	"pictures": [
+		"/img/contents/VA010_P1120473",
+		"/img/contents/VA010_P1120474",
+		"/img/contents/VA010_P1120476",
+		"/img/contents/VA010_P1120478",
+		"/img/contents/VA010_P1120479",
+		"/img/contents/VA010_P1120475"
+	]
+},
+{
+	"_id": {
+		"$oid": "5ba7d3eef12aad0c439d370d"
+	},
+	"productId": 13,
+	"name": "Rojo",
+	"model": "VN-011",
+	"description": "",
+	"author": "Pablo Otero",
+	"year": "2018",
+	"state": "Nuevo",
+	"price": 6000,
+	"category": "violin",
+	"pictures": [
+		"/img/contents/VN011_P1120459",
+		"/img/contents/VN011_P1120460",
+		"/img/contents/VN011_P1120461",
+		"/img/contents/VN011_P1120463"
+	]
+},
+{
+	"_id": {
+		"$oid": "5cafd5e47544030725806886"
+	},
+	"price": {
+		"currency": "EUR",
+		"amount": 6000
+	},
+	"internal": {
+		"approximatePriceUSD": 5454.545454545454
+	},
+	"deleted": true,
+	"pictures": [
+		"http://lavioladepapa.com/img/content/ga-alh-01_T1"
+	],
+	"model": "VA Gliga Gems II.",
+	"description": "Viola de 42 cm (16,5) con cuerdas Thomastik Dominant, mentonera, estuche, arco de fibra y almohadilla.",
+	"author": "Gliga (Rumanía).",
+	"year": 2014,
+	"state": "Usada durante dos años, muy bien cuidada, aspecto casi nuevo. Buen sonido.",
+	"category": "viola",
+	"created_at": {
+		"$date": "2019-04-12T00:03:48.218Z"
+	},
+	"updated_at": {
+		"$date": "2019-04-12T00:07:30.420Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "5e53016f337ca62b942254f9"
+	},
+	"productId": 12.0,
+	"name": "Doce",
+	"model": "VN-0012",
+	"description": "lorem ipsum",
+	"author": "Pablo Otero",
+	"year": "2019",
+	"state": "Nuevo",
+	"price": 6000.0,
+	"category": "violin",
+	"pictures": [
+		"/img/contents/VN012_P1040517",
+		"/img/contents/VN012_P1040526",
+		"/img/contents/VN012_P1040527",
+		"/img/contents/VN012_P1040535",
+		"/img/contents/VN012_P1040536"
+	]
+},
+{
+	"_id": {
+		"$oid": "5e53016f337ca62b942254fa"
+	},
+	"productId": 13.0,
+	"name": "Trece",
+	"model": "VN-013",
+	"description": "lorem ipsum",
+	"author": "Pablo Otero",
+	"year": "2019",
+	"state": "Nuevo",
+	"price": 6000.0,
+	"category": "violin",
+	"pictures": [
+		"/img/contents/VN013_P1040544",
+		"/img/contents/VN013_P1040550",
+		"/img/contents/VN013_P1040553",
+		"/img/contents/VN013_P1040554",
+		"/img/contents/VN013_P1040555",
+		"/img/contents/VN013_P1040556",
+		"/img/contents/VN013_P1040557"
+	]
+},
+{
+	"_id": {
+		"$oid": "5e53016f337ca62b942254fb"
+	},
+	"productId": 14.0,
+	"name": "Catorce",
+	"model": "VA-014",
+	"description": "lorem ipsum",
+	"author": "Pablo Otero",
+	"year": "2019",
+	"state": "Nuevo",
+	"price": 6000.0,
+	"category": "viola",
+	"pictures": [
+		"/img/contents/VA014_P1040561",
+		"/img/contents/VA014_P1040563",
+		"/img/contents/VA014_2P1040571",
+		"/img/contents/VA014_3P1040572",
+		"/img/contents/VA014_P1040573",
+		"/img/contents/VA014_P1040566",
+		"/img/contents/VA014_P1040569"
+	]
+},
+{
+	"_id": {
+		"$oid": "5e53016f337ca62b942254fc"
+	},
+	"productId": 15.0,
+	"name": "Catorce Bis",
+	"model": "VA-014-bis",
+	"description": "lorem ipsum",
+	"author": "Pablo Otero",
+	"year": "2019",
+	"state": "Nuevo",
+	"price": 6000.0,
+	"category": "viola",
+	"pictures": [
+		"/img/contents/VA014b_P1040575",
+		"/img/contents/VA014b_2P1040582",
+		"/img/contents/VA014b_3P1040585",
+		"/img/contents/VA014b_P1040593",
+		"/img/contents/VA014b_P1040594",
+		"/img/contents/VA014b_P1040595",
+		"/img/contents/VA014b_P1040597"
+	]
+},
+{
+	"_id": {
+		"$oid": "5e53016f337ca62b942254fd"
+	},
+	"productId": 16.0,
+	"name": "Dieciseis",
+	"model": "VN016",
+	"description": "lorem ipsum",
+	"author": "Pablo Otero",
+	"year": "2019",
+	"state": "Nuevo",
+	"price": 6000.0,
+	"category": "violin",
+	"pictures": [
+		"/img/contents/VN016_P1040604",
+		"/img/contents/VN016_2P1040609",
+		"/img/contents/VN016_3P1040610",
+		"/img/contents/VN016_P1040615",
+		"/img/contents/VN016_P1040622",
+		"/img/contents/VN016_P1040627",
+		"/img/contents/VN016_P1040628",
+		"/img/contents/VN016_P1040632",
+		"/img/contents/VN016_P1040634"
+	]
+}]
+
