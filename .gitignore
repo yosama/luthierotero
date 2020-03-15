@@ -64,3 +64,4 @@ package-lock.json
 
 src/public/img/contents
 src/bin
+products.json
