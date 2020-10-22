@@ -1,6 +1,6 @@
-# Greeting
+# Luthierotero
 
-Luthierotero web page
+Luthierotero is an instrument web page of wood and strings
 
 ## Getting Started
 
